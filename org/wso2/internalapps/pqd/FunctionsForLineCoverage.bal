@@ -960,7 +960,7 @@ function getYearlyLineCoverageHistoryForSelectedComponent(int selected,string st
 function saveLineCoverageToDatabase (json projects,http:HttpClient sonarcon,json configData)  {
     endpoint<sql:ClientConnector> sqlEndPoint {}
 
-    worker issuesRecordingWorker {
+    worker lineCoverageRecordingWorker {
 
         sql:ClientConnector sqlCon = getSQLConnectorForIssuesSonarRelease();
         bind sqlCon with sqlEndPoint;
