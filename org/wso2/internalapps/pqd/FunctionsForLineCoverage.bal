@@ -271,7 +271,7 @@ function getSelectedProductLineCoverage (int productId) (json) {
         sql:Parameter sonar_project_key_para = {sqlType:sql:Type.VARCHAR, value:project_key};
         sql:Parameter snapshot_id_para = {sqlType:sql:Type.INTEGER, value:snapshot_id};
         params = [sonar_project_key_para,snapshot_id_para];
-        datatable ldt = sqlEndPoint.select(GET_DETAILS_OF_COMPONENT , params,typeof LineCoverageDetails);
+        datatable ldt = sqlEndPoint.select(GET_LINE_COVERAGE_DETAILS, params,typeof LineCoverageDetails);
         LineCoverageDetails lcd;
         while (ldt.hasNext()) {
             any row2 = ldt.getNext();
@@ -342,7 +342,7 @@ function getSelectedComponentLineCoverage (int componentId) (json) {
         sql:Parameter sonar_project_key_para = {sqlType:sql:Type.VARCHAR, value:project_key};
         sql:Parameter snapshot_id_para = {sqlType:sql:Type.INTEGER, value:snapshot_id};
         params = [sonar_project_key_para,snapshot_id_para];
-        datatable ldt = sqlEndPoint.select(GET_DETAILS_OF_COMPONENT , params,typeof LineCoverageDetails);
+        datatable ldt = sqlEndPoint.select(GET_LINE_COVERAGE_DETAILS, params,typeof LineCoverageDetails);
         LineCoverageDetails lcd;
         while (ldt.hasNext()) {
             any row2 = ldt.getNext();
