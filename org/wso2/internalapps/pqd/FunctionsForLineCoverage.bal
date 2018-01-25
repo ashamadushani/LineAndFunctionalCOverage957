@@ -58,6 +58,7 @@ struct YearlyLineCoverage{
     float uncovered_lines;
     float line_coverage;
 }
+
 function getAllAreaLineCoverage () (json) {
     endpoint<sql:ClientConnector> sqlEndPoint{}
     sql:ClientConnector sqlCon = getSQLConnectorForIssuesSonarRelease();
