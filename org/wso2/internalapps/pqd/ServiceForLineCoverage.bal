@@ -19,20 +19,6 @@ service<http> LineCoverageService {
 
     @http:resourceConfig {
         methods:["GET"],
-        path:"/fetch-data"
-    }
-    resource saveLineCoverageToDB (http:Request request, http:Response response) {
-        http:HttpClient sonarCon = getHttpClientForSonar(configData);
-        string path="/api/projects";
-        json sonarResponse = getDataFromSonar(sonarCon,path,configData);
-        saveLineCoverageToDatabase(sonarResponse,sonarCon,configData);
-        response.setStringPayload("Fetchin data from sonar begun at "+currentTime().format("yyyy-MM-dd  HH:mm:ss"));
-        response.setHeader("Access-Control-Allow-Origin", "*");
-         _ = response.send();
-    }
-
-    @http:resourceConfig {
-        methods:["GET"],
         path:"/{category}/{categoryId}"
     }
     resource getLineCoverage(http:Request request, http:Response response,string category, string categoryId){
