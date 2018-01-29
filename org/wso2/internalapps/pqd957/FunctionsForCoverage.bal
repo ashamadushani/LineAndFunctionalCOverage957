@@ -1,4 +1,4 @@
-package org.wso2.internalapps.pqd;
+package org.wso2.internalapps.pqd957;
 
 struct CoverageSnapshots {
     int snapshot_id;
