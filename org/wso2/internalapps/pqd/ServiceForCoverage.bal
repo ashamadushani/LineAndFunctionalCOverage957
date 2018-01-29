@@ -6,7 +6,7 @@ import ballerina.net.http;
 
 @http:configuration {
     basePath:"/internal/product-quality/v1.0/coverage",
-    httpsPort:9092,
+    httpsPort:9096,
     keyStoreFile:"${ballerina.home}/bre/security/ballerinaKeystore.p12",
     keyStorePassword:"ballerina",
     certPassword:"ballerina",
